@@ -8,6 +8,8 @@ inspired by mongoose.model("yourModel"), raggae offers the same registry like fu
     npm install reggae
 
 ## how to ##
+### To use as registry ###
+
 In File A:
 
     var raggae = require('raggae');
@@ -22,6 +24,13 @@ In File B:
     var raggae = require('raggae');
     console.log( raggae.get('controller.rastaman')('yeah') );
 
+
+
+### To use as object helper ###
+
+    var scope = {scopedA: {scopedB: {}}};
+    raggae.set('scopedA.scopedB.scopedC.scopedD', 5, scope); // {scopedA: {scopedB: {scopedC: {scopedD: {}}}}};
+    raggae.get('scopedA.scopedB.scopedC.scopedD', 5, scope); // returns 5
 
 
 Easy - Use it wisely ;)

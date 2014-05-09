@@ -18,7 +18,7 @@ function set(name, value, context) {
 
     var parts = name.split('.')
     var p = parts.pop();
-    var obj = _get(parts, true, context);
+    var obj = _get(parts, true, null, context);
     return obj && p ? (obj[p] = value) : undefined; // Object
 }
 
@@ -32,18 +32,27 @@ function set(name, value, context) {
  * @returns {*|_get}
  * @private
  */
-function _get (parts, create, defaultValue, context){
-    context = context || this;
+function _get(parts, create, defaultValue, context) {
+    context = context || myGlobal;
     create = create || false;
     defaultValue = defaultValue || null;
 
-    var p, i = 0;
-
-
-    while(context && (p = parts[i++])){
-        context = (p in context ? context[p] : (create ? context[p] = {} : defaultValue));
+    try {
+        for (var i = 0; i < parts.length; i++) {
+            var p = parts[i];
+            if (!(p in context)) {
+                if (create) {
+                    context[p] = {};
+                } else {
+                    return defaultValue;
+                }
+            }
+            context = context[p];
+        }
+        return context; // mixed
+    } catch (e) {
+        return defaultValue;
     }
-    return context;
 }
 
 
