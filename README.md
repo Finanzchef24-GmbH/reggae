@@ -2,7 +2,7 @@ reggae
 ======
 
 Chilled object registry, to support your application design.
-inspired by mongoose.model("yourModel"), raggae offers the same registry like funktion for your own code.
+inspired by mongoose.model("yourModel"), raggae offers the same registry like function for your own code.
 
 ## Install ##
     npm install reggae
