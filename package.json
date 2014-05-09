@@ -1,0 +1,25 @@
+{
+  "name": "reggae",
+  "version": "0.0.1",
+  "description": "chilled object registry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Finanzchef24-GmbH/reggae"
+  },
+  "keywords": [
+    "registry",
+    "object",
+    "getter",
+    "setter"
+  ],
+  "author": "christoph.hagenbrock@googlemail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Finanzchef24-GmbH/reggae/issues"
+  },
+  "homepage": "https://github.com/Finanzchef24-GmbH/reggae"
+}
