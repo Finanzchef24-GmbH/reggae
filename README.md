@@ -29,7 +29,7 @@ In File B:
 ### To use as object helper ###
 
     var scope = {scopedA: {scopedB: {}}};
-    raggae.set('scopedA.scopedB.scopedC.scopedD', 5, scope); // {scopedA: {scopedB: {scopedC: {scopedD: {}}}}};
+    raggae.set('scopedA.scopedB.scopedC.scopedD', 5, scope); // {scopedA: {scopedB: {scopedC: {scopedD: 5}}}};
     raggae.get('scopedA.scopedB.scopedC.scopedD', 5, scope); // returns 5
 
 
